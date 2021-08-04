@@ -56,3 +56,33 @@ git clone git://github.com/xxx.git
 
 
 
+# git 删除远程仓库的文件
+
+远程厂库只能删除仓库，无法删除文件，因此，此问题的解决方案是：
+
+第一步：git pull 远程仓库下来
+
+```shell
+git pull origin master  #我之前已标识origin 远程仓库“例如：git remote add origin [url]”
+```
+
+第二步：删除指定文件/文件夹
+
+```shell
+git rm --cached [file_name]  #删除文件名
+
+git rm -r --cached [dir_name] #删除文件夹 -r 递归删除
+```
+
+第三步：git commit 暂存起来
+
+```shell
+git commit -m "delete [file_name]" #提交一次，并嵌入信息
+```
+
+第四步：git push  推文件到远程仓库
+
+```shell
+git push -u origin master  #push文件到仓库
+```
+
