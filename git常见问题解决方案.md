@@ -86,3 +86,35 @@ git commit -m "delete [file_name]" #提交一次，并嵌入信息
 git push -u origin master  #push文件到仓库
 ```
 
+# git push 失败
+提示错误：
+
+```shell
+
+git push -u origin master
+#error: src refspec master does not match any
+#error: failed to push some refs to 'https://github.com/Rico-Lucky/Go-Learning.git'
+
+$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/Rico-Lucky/Go-Learning.git'
+
+
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        http.md
+        tmp/
+
+#发现问题了，原来我未添加文件，提交后，才能push
+git add .
+
+git commit -m "XXX"
+
+git push -u origin master
+```
