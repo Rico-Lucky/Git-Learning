@@ -187,6 +187,8 @@ git branch -d [branch_name] #删除分支
 
 git merge [branch_name] #合并指定的分支到当前分支
 
+git remote add origin [remote_url]
+
 #删除远程分支
 git push origin --delete [branch_name]
 
